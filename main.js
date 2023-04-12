@@ -1,14 +1,9 @@
-function esperar(tiempo) {
-    return new Promise((resolve) => {
+async function esperar(tiempo) {
+    const resultado = await new Promise((resolve) => {
     setTimeout(() => {
     resolve(`Esperado ${tiempo} ms`);
     }, tiempo);
     });
-    }
-    esperar(2000)
-    .then((resultado) => {
     console.log(resultado);
-    })
-    .catch((error) => {
-    console.error('Error:', error);
-    });
+    }
+    esperar(2000); // Espera 2 segundos antes de mostrar el mensaje
